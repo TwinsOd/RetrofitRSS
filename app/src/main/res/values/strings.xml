@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RetrofitRSS</string>
+    <string name="transition_image" translatable="false">transition_image</string>
+</resources>

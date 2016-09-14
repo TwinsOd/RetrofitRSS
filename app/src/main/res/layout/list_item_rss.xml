@@ -1,0 +1,63 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.twins.retrofitrss.model.Item" />
+
+        <variable
+            name="click"
+            type="com.example.twins.retrofitrss.handler.ListClickHandler" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:onClick="@{click.onShowClick}"
+        card_view:cardCornerRadius="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/margin_image"
+                app:imageUrl="@{item.src}" />
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/image"
+                android:text="@{item.title}"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_pub_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_title"
+                android:layout_toRightOf="@+id/image"
+                android:text="@{item.pubDate}" />
+
+            <TextView
+                android:id="@+id/text_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_pub_date"
+                android:layout_toRightOf="@+id/image"
+                android:text="@{item.author}" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+</layout>
